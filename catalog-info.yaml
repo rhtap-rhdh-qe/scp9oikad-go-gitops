@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: scp9oikad-go-gitops
+  description: This is GitOps manifest for scp9oikad-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=scp9oikad-go
+    backstage.io/kubernetes-id: scp9oikad-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: scp9oikad-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:scp9oikad-go
